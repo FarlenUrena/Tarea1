@@ -1,7 +1,6 @@
-export class Usuario {
+export class TramitesTipos {
   id: number;
-  nombreCompleto: string;
-  cedula: string;
+  descripcion: string;
   estado: boolean;
   fechaRegistro: Date;
   fechaModificacion: Date;
