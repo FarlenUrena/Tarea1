@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="username">Cedula</label>
+                <label for="username">Cédula</label>
                 <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'Es invalido': submitted && f.usario.errors }" />
                 <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                     <div *ngIf="f.username.errors.required">Usuario es requerido</div>
