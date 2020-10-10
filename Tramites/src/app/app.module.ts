@@ -11,18 +11,30 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AppComponent } from './app.component';
 import { AlertComponent } from './_components';
 import { HomeComponent } from './home';
+import { TramitesTiposComponent } from './tramites-tipos/tramites-tipos.component';
+import { RouterModule, Routes } from '@angular/router';
+
+
+const routes: Routes =[
+    {path:'',redirectTo:'/tramitestipos',pathMatch:'full'},
+    {path:'tramitestipos',component:TramitesTiposComponent},
+    {path:'tramitestipos/',component:TramitesTiposComponent},
+    {path:'app-tramites-tipos',component:TramitesTiposComponent},
+]
 
 @NgModule({
-    imports: [
+    imports:[
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        AppRoutingModule
+        AppRoutingModule,
+        RouterModule.forRoot(routes)
     ],
     declarations: [
         AppComponent,
         AlertComponent,
-        HomeComponent
+        HomeComponent,
+        TramitesTiposComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
@@ -31,6 +43,7 @@ import { HomeComponent } from './home';
         // provider used to create fake backend
         fakeBackendProvider
     ],
+    
     bootstrap: [AppComponent]
 })
 export class AppModule { };
